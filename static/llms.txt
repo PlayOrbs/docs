@@ -1,0 +1,44 @@
+# PlayOrbs Documentation
+
+> Decentralized Battle Royale powered by Solana & ICP
+
+PlayOrbs is a provably fair battle royale gaming platform. Players pay SOL entry fees to compete in physics-based rounds, with winners receiving SOL prizes and PORB token emissions.
+
+## Key Facts
+
+- Built on Solana (execution) and Internet Computer/ICP (randomness)
+- 100% fair launch - no pre-mine, no team allocation, no VC
+- PORB token backed by real game fees with locked liquidity
+- Cryptographically verified outcomes via ICP threshold signatures
+
+## Documentation Sections
+
+- [One Pager](/intro/one-pager): Quick overview of PlayOrbs
+- [What is PlayOrbs](/): Introduction and value proposition
+- [How It Works](/intro/how-it-works): Game flow from entry to rewards
+- [Getting Started](/gameplay/getting-started): Set up wallet and play
+- [Round Mechanics](/gameplay/round-mechanics): Round states and transitions
+- [Tier System](/gameplay/tier-system): Entry fees and player limits
+- [Seasons](/gameplay/seasons): Season structure and rewards
+- [Points System](/earning/points-system): How points are calculated
+- [PORB Emissions](/earning/porb-emissions): Token reward mechanics
+- [Leaderboards](/earning/leaderboards): Ranking system
+- [Referral Program](/earning/referral-program): Earn from referrals
+- [PORB Token](/tokenomics/orb-token): Token specification and utility
+- [Supply Mechanics](/tokenomics/supply-mechanics): Token distribution
+- [Genesis Bootstrap](/tokenomics/genesis-bootstrap): Initial liquidity creation
+- [Epoch Decay](/tokenomics/epoch-decay): Emission schedule
+- [Liquidity Management](/tokenomics/liquidity-management): LP operations
+- [Economic Sustainability](/tokenomics/economic-sustainability): Long-term viability
+- [Architecture Overview](/technical/architecture-overview): System design
+- [Randomness Overview](/randomness/overview): ICP integration for fairness
+- [Physics Engine](/physics/engine-overview): Deterministic game engine
+- [Fee Distribution](/economics/fee-distribution): How fees flow
+- [Glossary](/reference/glossary): Terminology reference
+
+## Links
+
+- Website: https://playorbs.com
+- Documentation: https://docs.playorbs.com
+- Solana: https://solana.com
+- Internet Computer: https://internetcomputer.org

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Intro -->
+  <url><loc>https://docs.playorbs.com/intro</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://docs.playorbs.com/intro/how-it-works</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://docs.playorbs.com/intro/key-features</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://docs.playorbs.com/intro/one-pager</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Gameplay -->
+  <url><loc>https://docs.playorbs.com/gameplay/getting-started</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://docs.playorbs.com/gameplay/matrix-game</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/gameplay/round-mechanics</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/gameplay/seasons</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/gameplay/skills-strategy</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/gameplay/take-profit</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/gameplay/tier-system</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Earning -->
+  <url><loc>https://docs.playorbs.com/earning/achievements</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/earning/leaderboards</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/earning/points-system</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/earning/porb-emissions</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/earning/referral-program</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Economics -->
+  <url><loc>https://docs.playorbs.com/economics/bounty-inheritance</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/economics/fee-distribution</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/economics/kill-rewards</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/economics/payout-mechanics</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/economics/tie-breaking</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Tokenomics -->
+  <url><loc>https://docs.playorbs.com/tokenomics/orb-token</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://docs.playorbs.com/tokenomics/economic-sustainability</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/tokenomics/epoch-decay</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/tokenomics/genesis-bootstrap</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/tokenomics/liquidity-management</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/tokenomics/supply-mechanics</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Physics -->
+  <url><loc>https://docs.playorbs.com/physics/engine-overview</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/physics/boundary-system</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/physics/collision-physics</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/physics/gravity-system</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/physics/parameter-reference</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/physics/split-mechanic</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/physics/sudden-death</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/physics/tether-system</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Randomness -->
+  <url><loc>https://docs.playorbs.com/randomness/overview</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/randomness/icp-integration</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/randomness/seed-generation</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/randomness/sequential-revelation</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/randomness/verification</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Technical -->
+  <url><loc>https://docs.playorbs.com/technical/architecture-overview</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://docs.playorbs.com/technical/account-structures</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/technical/instruction-reference</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/technical/security-model</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://docs.playorbs.com/technical/settlement-flow</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- SDK -->
+  <url><loc>https://docs.playorbs.com/sdk/join-round</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Reference -->
+  <url><loc>https://docs.playorbs.com/reference/constants</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://docs.playorbs.com/reference/diagrams</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://docs.playorbs.com/reference/glossary</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://docs.playorbs.com/reference/mathematical-proofs</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://docs.playorbs.com/legal/terms</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://docs.playorbs.com/legal/privacy_policy</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+</urlset>

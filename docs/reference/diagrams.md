@@ -1,0 +1,327 @@
+---
+sidebar_position: 4
+title: System Diagrams
+description: Visual representations of system architecture
+---
+
+# System Diagrams
+
+Visual representations of the PlayOrbs architecture and flows.
+
+## System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        PORBS GAME ARCHITECTURE                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                        ON-CHAIN LAYER                                │   │
+│   │                                                                      │   │
+│   │   ┌───────────┐   ┌───────────┐   ┌───────────┐   ┌───────────┐    │   │
+│   │   │   Root    │   │  Round    │   │  Player   │   │  Season   │    │   │
+│   │   │  Account  │   │   Pages   │   │   Stats   │   │ Snapshots │    │   │
+│   │   └─────┬─────┘   └─────┬─────┘   └─────┬─────┘   └─────┬─────┘    │   │
+│   │         │               │               │               │          │   │
+│   │         └───────────────┴───────────────┴───────────────┘          │   │
+│   │                                 │                                   │   │
+│   │   ┌─────────────────────────────┴─────────────────────────────┐    │   │
+│   │   │                    INSTRUCTION SET                         │    │   │
+│   │   │  join_round | settle_round | round_payout | update_stats  │    │   │
+│   │   │  convert_points | claim_season_pool | manage_liquidity    │    │   │
+│   │   └───────────────────────────────────────────────────────────┘    │   │
+│   │                                                                      │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                     │                                        │
+│                                     ▼                                        │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                      EXTERNAL INTEGRATIONS                           │   │
+│   │                                                                      │   │
+│   │   ┌─────────────┐   ┌─────────────┐   ┌─────────────────────────┐   │   │
+│   │   │ ICP Canister│   │   Raydium   │   │    SPL Token Program    │   │   │
+│   │   │ (Seed Gen)  │   │    CLMM     │   │    (PORB Mint/Transfer)  │   │   │
+│   │   └─────────────┘   └─────────────┘   └─────────────────────────┘   │   │
+│   │                                                                      │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Round State Machine
+
+```
+                    ┌──────────────────────────────────────────────────┐
+                    │              ROUND STATE MACHINE                  │
+                    └──────────────────────────────────────────────────┘
+                                           │
+                                           ▼
+                    ┌──────────────────────────────────────────────────┐
+                    │                    OPEN                           │
+                    │                  status = 0                       │
+                    │                                                   │
+                    │  Entry Condition: First player joins              │
+                    │  Actions: Accept joins, accumulate prize pool    │
+                    │  Invariant: joined_count < max_players           │
+                    └──────────────────────┬───────────────────────────┘
+                                           │
+                           ┌───────────────┴───────────────┐
+                           │ joined_count >= min_players   │
+                           └───────────────┬───────────────┘
+                                           ▼
+                    ┌──────────────────────────────────────────────────┐
+                    │                  COUNTDOWN                        │
+                    │                  status = 1                       │
+                    │                                                   │
+                    │  Transition: Auto-triggered on min_players       │
+                    │  Actions: Continue accepting joins, timer runs   │
+                    └──────────────────────┬───────────────────────────┘
+                                           │
+                           ┌───────────────┴───────────────┐
+                           │  Timeout OR max_players reached│
+                           └───────────────┬───────────────┘
+                                           ▼
+                    ┌──────────────────────────────────────────────────┐
+                    │                   SETTLED                         │
+                    │                  status = 2                       │
+                    │                                                   │
+                    │  Transition: Authority calls settle_round        │
+                    │  Actions: Set seed, distribute prizes, points    │
+                    │  Terminal: No further state changes              │
+                    └──────────────────────────────────────────────────┘
+```
+
+## Fee Distribution Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         FEE DISTRIBUTION MODEL                               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   Player Payment                                                             │
+│   total = entry_lamports + take_profit                                       │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌────────────────────────────────────────────────────────────────────┐    │
+│   │                     PRIMARY SPLIT (80/20)                           │    │
+│   └────────────────────────────────────────────────────────────────────┘    │
+│        │                                    │                               │
+│        │ 80%                                │ 20%                           │
+│        ▼                                    ▼                               │
+│   ┌────────────┐                     ┌─────────────────────────────────┐    │
+│   │   VAULT    │                     │        PROTOCOL FEES            │    │
+│   │ Prize Pool │                     │                                 │    │
+│   └────────────┘                     └─────────────────────────────────┘    │
+│        │                                    │                               │
+│        │                         ┌──────────┴──────────┐                   │
+│        │                         │                     │                   │
+│        │                    ┌────┴────┐          ┌─────┴─────┐             │
+│        │                    │   50%   │          │    50%    │             │
+│        │                    │ LP Vault│          │ Dev Split │             │
+│        │                    └─────────┘          └─────┬─────┘             │
+│        │                                               │                   │
+│        │                                          ┌────┴────┐              │
+│        │                                     ┌────┴───┐ ┌───┴────┐         │
+│        │                                     │  90%   │ │  10%   │         │
+│        │                                     │  Dev   │ │Referral│         │
+│        │                                     │ Wallet │ │ Vault  │         │
+│        ▼                                     └────────┘ └────────┘         │
+│   ┌────────────────────────────────────────────────────────────────────┐    │
+│   │                      PRIZE DISTRIBUTION                             │    │
+│   │   70% Bounty (kill rewards) + 30% Survival (winner)                │    │
+│   └────────────────────────────────────────────────────────────────────┘    │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Seed Generation Pipeline
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     SEED GENERATION PIPELINE                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  1. PRE-GENERATION (Before any games)                                       │
+│     ┌─────────────────────────────────────────────────────────────────┐     │
+│     │  ICP Canister generates N random seeds                          │     │
+│     │  Seeds stored encrypted, Merkle tree computed                   │     │
+│     │  Root hash published on Solana                                  │     │
+│     └─────────────────────────────────────────────────────────────────┘     │
+│                                    │                                        │
+│                                    ▼                                        │
+│  2. ROUND SETTLEMENT                                                        │
+│     ┌─────────────────────────────────────────────────────────────────┐     │
+│     │  Round ends → Request seed for round N                          │     │
+│     │  ICP decrypts and returns: seed + Merkle proof                  │     │
+│     │  Solana verifies proof against stored root                      │     │
+│     └─────────────────────────────────────────────────────────────────┘     │
+│                                    │                                        │
+│                                    ▼                                        │
+│  3. DETERMINISTIC SIMULATION                                                │
+│     ┌─────────────────────────────────────────────────────────────────┐     │
+│     │  seed → PRNG → physics simulation → results                     │     │
+│     │  Anyone can verify: same seed = same outcome                    │     │
+│     └─────────────────────────────────────────────────────────────────┘     │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Token Emission Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        TOKEN EMISSION FLOW                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   Round Completes                                                            │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌────────────────────┐                                                    │
+│   │ Calculate Activity │  activity = Σ(orb_count × frames)                  │
+│   └────────────────────┘                                                    │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌────────────────────┐                                                    │
+│   │ Emission Probability│  P = 1 - e^(-λ × activity)                        │
+│   └────────────────────┘                                                    │
+│        │                                                                     │
+│        ├──── P < threshold ────→ No emission this round                     │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌────────────────────┐                                                    │
+│   │ Current Emission   │  E = E₀ × (0.85)^epoch                             │
+│   └────────────────────┘                                                    │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌────────────────────┐                                                    │
+│   │ Distribute to      │  Based on placement, kills, participation          │
+│   │ Round Players      │                                                    │
+│   └────────────────────┘                                                    │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Epoch Decay Visualization
+
+```
+Emission (PORB)
+    │
+ 10 ┤ ████████████
+    │ ████████████
+  8 ┤ ████████████ ██████████
+    │ ████████████ ██████████
+  6 ┤ ████████████ ██████████ █████████
+    │ ████████████ ██████████ █████████
+  4 ┤ ████████████ ██████████ █████████ ████████
+    │ ████████████ ██████████ █████████ ████████
+  2 ┤ ████████████ ██████████ █████████ ████████ ███████ ...
+    │ ████████████ ██████████ █████████ ████████ ███████
+  0 ┼──────────────────────────────────────────────────────→
+    0   Epoch 0     Epoch 1    Epoch 2   Epoch 3  Epoch 4   Rounds
+        (10 PORB)   (8.5 PORB)  (7.2 PORB) (6.1 PORB)(5.2 PORB)
+```
+
+## Player Journey
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          PLAYER JOURNEY                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐  │
+│   │  ENTRY  │───→│ COMPETE │───→│ SETTLE  │───→│ REWARDS │───→│ CONVERT │  │
+│   └─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘  │
+│        │              │              │              │              │        │
+│        ▼              ▼              ▼              ▼              ▼        │
+│   ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐  │
+│   │ Pay fee │    │ Physics │    │ Verify  │    │ Receive │    │ Points  │  │
+│   │ Join    │    │ engine  │    │ seed &  │    │ SOL +   │    │ to PORB  │  │
+│   │ round   │    │ plays   │    │ results │    │ points  │    │ tokens  │  │
+│   └─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘  │
+│                                                                              │
+│   Repeat to accumulate points → Climb leaderboards → Claim season rewards   │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## PDA Account Hierarchy
+
+```
+Program (97rgjKeM...)
+    │
+    ├── RootAccount
+    │   └── ["root"]
+    │       ├── Global config
+    │       ├── Tier configs
+    │       └── Tier states
+    │
+    ├── RoundPage (per tier)
+    │   └── ["round_page", tier_id, page_index]
+    │       └── 120 rounds per page
+    │
+    ├── RoundPlayer
+    │   └── ["rp", tier_id, round_id, player]
+    │       └── Membership proof
+    │
+    ├── PlayerStats (per season)
+    │   └── ["ps", season_id, player]
+    │       └── Points, kills, rounds
+    │
+    ├── Vault (per round)
+    │   └── ["vault", tier_id, round_id]
+    │       └── Prize pool escrow
+    │
+    └── SeasonSnapshot
+        └── ["season_snapshot", season_id]
+            └── Frozen season data
+```
+
+## Physics Frame Loop
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      PHYSICS FRAME LOOP (120 Hz)                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   Frame Start                                                                │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌──────────────┐                                                          │
+│   │ Apply Gravity│ → All orbs pulled toward center                          │
+│   └──────────────┘                                                          │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌──────────────┐                                                          │
+│   │ Move Orbs    │ → position += velocity                                   │
+│   └──────────────┘                                                          │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌──────────────┐                                                          │
+│   │ Collisions   │ → Orb-orb, orb-wall detection & resolution              │
+│   └──────────────┘                                                          │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌──────────────┐                                                          │
+│   │ Tether Check │ → Break tethers if conditions met                        │
+│   └──────────────┘                                                          │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌──────────────┐                                                          │
+│   │ Eliminations │ → Process kills, payouts, inheritance                    │
+│   └──────────────┘                                                          │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌──────────────┐                                                          │
+│   │ TP / Finalize│ → Check take profit, game end conditions                │
+│   └──────────────┘                                                          │
+│        │                                                                     │
+│        ▼                                                                     │
+│   Frame End → Next Frame (8.33ms later)                                     │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Next Steps
+
+- [Architecture Overview](/technical/architecture-overview) - System details
+- [Engine Overview](/physics/engine-overview) - Physics engine
+- [Glossary](/reference/glossary) - Term definitions
