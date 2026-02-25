@@ -1,0 +1,1886 @@
+# PlayOrbs — Full Documentation
+
+> Decentralized Battle Royale powered by Solana & ICP
+
+This file contains the complete PlayOrbs documentation for LLM consumption.
+
+- Website: https://playorbs.com
+- Documentation: https://docs.playorbs.com
+- Solana: https://solana.com
+- Internet Computer: https://internetcomputer.org
+
+---
+
+# What is PlayOrbs?
+
+**PlayOrbs** is a decentralized battle royale gaming platform powered by two leading blockchains: Solana for high-performance on-chain execution and the Internet Computer (ICP) for provably fair randomness. Players compete in tiered rounds, paying entry fees in SOL for a chance to win prize pools and earn PORB tokens.
+
+## Value Proposition
+
+- **Fair Launch Economics**: No pre-mine, no team allocation - tokens are earned through play
+- **Real Liquidity Backing**: Every PORB token is backed by accumulated game fees
+- **Dual-Chain Security**: Solana handles settlements while ICP provides cryptographic randomness
+
+## Key Differentiators
+
+| Feature | PlayOrbs | Traditional P2E |
+|---------|-----------|-----------------|
+| Token Distribution | Earned through gameplay | Pre-allocated to team/investors |
+| Liquidity Source | Accumulated game fees | External capital injection |
+| Token Utility | Prize pools, emissions, governance | Often speculative only |
+| Settlement | Verifiable on-chain | Often centralized servers |
+
+## Powered By
+
+### Solana — Execution Layer
+Built with Anchor 0.32.1, the on-chain program manages:
+- Round creation and settlement
+- Prize pool distribution
+- Token emissions
+- Player statistics
+
+### Internet Computer (ICP) — Randomness Layer
+ICP canisters provide threshold cryptography for:
+- Unpredictable seed generation
+- Verifiable fairness via Merkle proofs
+- Tamper-proof settlement that no one can manipulate
+
+### Deterministic Physics
+The 120Hz game engine guarantees:
+- Byte-perfect replay across platforms
+- Trustless verification
+- Fair competition
+
+---
+
+# One Pager
+
+**The provably fair battle royale powered by Solana & ICP.**
+
+## The Problem
+
+Web3 gaming is broken. Players face:
+- **Rigged outcomes** — Centralized RNG that operators can manipulate
+- **Ponzi tokenomics** — Inflationary tokens backed by nothing but hope
+- **Rug-prone liquidity** — Team-controlled pools that vanish overnight
+- **Pay-to-win mechanics** — Deep pockets beat skill every time
+
+## The Solution
+
+PlayOrbs reimagines competitive gaming with trustless infrastructure.
+
+PAY SOL → COMPETE → WIN SOL
+- No tokens required to play
+- Entry fees fund prize pools
+- Physics-based battle royale, deterministic and verifiable
+
+## How It Works
+
+| Step | Action | Result |
+|:----:|--------|--------|
+| 1 | Pay SOL entry fee | Join the arena |
+| 2 | Battle royale begins | Physics engine determines winner |
+| 3 | ICP provides seed | Cryptographically verified outcome |
+| 4 | Winners paid instantly | SOL + Points + PORB tokens |
+
+Zero trust required. Every outcome is verifiable on-chain.
+
+## The PORB Token
+
+100% fair launch. Zero pre-mine. Zero VC allocation.
+
+- Total Supply: 100,000,000 PORB
+- Team Allocation: 0%
+- VC Allocation: 0%
+- Treasury: 0%
+- Gameplay: 100%
+
+### Liquidity-Backed Value
+
+Every PORB is backed by real game fees:
+- 20% of all entry fees flow to protocol
+- 50% of protocol fees fund LP vault
+- Continuous buybacks create demand
+- Locked liquidity — permanently. No rug possible.
+
+## Why PlayOrbs Wins
+
+| Traditional Gaming | PlayOrbs |
+|--------------------|----------|
+| Trust the operator | Trust the math |
+| Inflationary tokens | Hard cap at 100M |
+| Team controls liquidity | Liquidity locked forever |
+| Opaque RNG | ICP threshold cryptography |
+| Play to grind | Play to compete |
+
+## The Numbers
+
+- Prize Split: 80% to players (70% bounty/kills, 30% survival)
+- Fee Split: 80% prizes, 20% protocol (LP + Dev)
+- Emissions: 15% decay per epoch, 100+ year longevity
+
+## Dual-Chain Architecture
+
+ICP (internetcomputer.org): Threshold Randomness → Merkle Trees → ECDSA Signatures
+- WHY ICP: Decentralized RNG that no one can predict or rig
+
+Solana (solana.com): Verify Proofs → Execute Rounds → Reward Winners
+- WHY SOLANA: Fast, cheap transactions with locked liquidity
+
+---
+
+# How It Works
+
+The game operates as a simple loop: enter, compete, and earn rewards based on your performance.
+
+## The Game Loop
+
+### 1. Entry
+Players pay SOL to join a round in their chosen tier. Each tier has different:
+- Entry fees (higher tiers = bigger rewards)
+- Player limits
+- Countdown durations
+- Points multipliers
+
+### 2. Competition
+Battle royale gameplay happens off-chain in a deterministic physics engine:
+- All players spawn in the arena
+- Orbs collide, break tethers, and eliminate opponents
+- Last orb standing wins
+
+### 3. Settlement
+After the round ends:
+- A cryptographic seed from the ICP canister determines final outcomes
+- Winners are verified on-chain
+- Prizes are distributed automatically
+
+### 4. Rewards
+Participants earn multiple reward types:
+- **SOL Prizes**: Winners receive portions of the prize pool
+- **Points**: All players earn points based on performance
+- **PORB Tokens**: First 3 joiners may receive token emissions
+
+## Fee Distribution
+
+Entry Fee (100%)
+- 80% → Prize Pool (winners)
+- 20% → Protocol
+  - 50% → LP Vault (liquidity)
+  - 50% → Dev Wallet
+    - 90% → Development
+    - 10% → Referral Rewards
+
+## Round States
+
+| State | Description | What Happens |
+|-------|-------------|--------------|
+| **Open** | Accepting players | Players join, prize pool grows |
+| **Countdown** | Timer running | Minimum players reached, countdown starts |
+| **Settled** | Round complete | Winners determined, prizes distributed |
+
+## Settlement Verification
+
+1. **ICP Canister** generates a cryptographic seed
+2. **Merkle Proof** binds the seed to the specific round
+3. **ECDSA Signature** proves authenticity
+4. **On-chain Verification** confirms everything before settlement
+
+This means no one—not even the operators—can predict or manipulate outcomes.
+
+---
+
+# Key Features
+
+## Tiered Competition
+
+Multiple entry tiers cater to different risk appetites. Higher tiers offer:
+- Larger prize pools
+- Higher points multipliers
+- More competitive opponents
+
+## Seasonal Leaderboards
+
+- **60,000 rounds per season** (~3 months)
+- Points accumulate throughout the season
+- Top performers share the season pool
+- Rankings reset each season for fresh competition
+
+## Token Emissions
+
+| Recipient | Amount per Emission |
+|-----------|---------------------|
+| 1st Joiner | 100 PORB |
+| 2nd Joiner | 60 PORB |
+| 3rd Joiner | 40 PORB |
+| Season Pool | 50 PORB |
+
+Emission probability:
+- Increases linearly since last emission
+- Guaranteed by round 20
+- Average: ~1 emission per 10 rounds
+
+## Early Exit (EE)
+
+An optional early exit mechanism:
+- Set a target earnings when joining
+- Automatically exit if target is hit
+- Reduces risk but may limit maximum gains
+
+## Referral Program
+
+Invite friends and earn:
+- 10% of referred players' entry fees (SOL)
+- 20 points per referred player join
+- Milestone bonuses at 50 and 250 referrals
+
+## Achievement System
+
+### Seasonal Achievements (reset each season)
+- First Blood - Play 1 round
+- Getting Warm - Play 5 rounds
+- Committed - Play 25 rounds
+- Champion - Win 1 round
+- Killing Spree - 3+ kills in one round
+- Hot Streak - 2 consecutive wins
+
+### Lifetime Achievements (one-time)
+- Nickname Pioneer - First to set nickname
+- Referrer Pro - Refer 50 players
+- Referrer Legend - Refer 250 players
+
+## Fair Launch Economics
+
+- **No pre-mine**: Zero tokens allocated to team
+- **No VC rounds**: No investor allocations
+- **Earned only**: 100% of tokens come from gameplay
+- **Liquidity-backed**: Every PORB backed by real game fees
+
+## Provably Fair Randomness
+
+- Seeds from ICP's threshold cryptography
+- Merkle proofs bind seeds to rounds
+- Anyone can verify fairness independently
+
+---
+
+# Getting Started
+
+## Prerequisites
+
+1. **Solana Wallet**: Phantom, Solflare, or any Solana-compatible wallet
+2. **SOL Balance**: Enough to cover entry fees + transaction costs (~0.001 SOL per tx)
+3. **Game Client**: Access via the official PlayOrbs interface
+
+## Connecting Your Wallet
+
+1. Navigate to the PlayOrbs platform
+2. Click "Connect Wallet"
+3. Select your wallet provider
+4. Approve the connection
+
+## Your First Round
+
+### Step 1: Choose a Tier
+Select a tier based on your risk tolerance and SOL balance.
+
+### Step 2: Join a Round
+1. Click "Join" on your chosen tier
+2. Review the entry fee and round details
+3. Confirm the transaction in your wallet
+
+### Step 3: Wait for Countdown
+Once minimum players join, the countdown timer starts.
+
+### Step 4: Compete
+- Your orb spawns in the arena
+- Collide with opponents to eliminate them
+- Break tethers to score kills
+- Survive as long as possible
+
+### Step 5: Collect Rewards
+- Winners receive SOL prizes automatically
+- All players earn points based on performance
+- First 3 joiners may receive PORB emissions
+
+## Tips for New Players
+
+1. Start with Tier 0: Lower entry while learning
+2. Watch the countdown: More players = bigger prize pool
+3. Check emission status: Being first to join has advantages
+4. Track your points: They accumulate for season rewards
+5. Set a referral link: Earn from players you invite
+
+---
+
+# Round Mechanics
+
+Every PlayOrbs round follows a predictable lifecycle with three distinct states.
+
+## State Details
+
+### Open State
+The round begins when the first player joins:
+- Accept new players, accumulate prize pool
+- 80% to vault, 20% to protocol
+
+### Countdown State
+Triggered when minimum player threshold is met:
+- Countdown timer visible to all
+- New players can still join
+- Ends when timer expires OR max players reached
+
+### Settled State
+The terminal state after competition:
+- Cryptographic seed is set
+- Game outcome is determined
+- SOL prizes distributed to winners
+- Points awarded to all participants
+- PORB emissions processed (if triggered)
+
+## Round Data Structure
+
+```
+RoundMeta {
+    id: u64,
+    season_id: u16,
+    tier_id: u8,
+    status: u8,               // 0=Open, 1=Countdown, 2=Settled
+    countdown_start_ts: i64,
+    entry_lamports: u64,
+    min_players: u16,
+    max_players: u16,
+    countdown_secs: u32,
+    seed_hex: [u8; 32],
+    joined_count: u16,
+    created_ts: i64,
+}
+```
+
+## Settlement Eligibility
+
+```
+settlement_allowed = (status == COUNTDOWN) AND (
+    (now >= countdown_start_ts + countdown_secs)  // Timeout
+    OR (joined_count == max_players)              // Full
+)
+```
+
+---
+
+# Tier System
+
+Tiers define different competition levels with varying entry fees, player limits, and rewards.
+
+## Tier Configuration
+
+| Parameter | Description |
+|-----------|-------------|
+| tier_id | Unique identifier (0-15) |
+| entry_lamports | Entry fee in lamports |
+| min_players | Minimum to start countdown |
+| max_players | Maximum capacity |
+| countdown_secs | Countdown duration |
+| take_profit | Optional TP fee |
+| points_multiplier | Scoring multiplier |
+
+## Points Multiplier Effect
+
+| Tier | Base Points | Multiplier | Final Points |
+|------|-------------|------------|--------------|
+| 0 | 850 | 1.0x | 850 |
+| 1 | 850 | 1.5x | 1,275 |
+| 2 | 850 | 2.0x | 1,700 |
+| 3 | 850 | 3.0x | 2,550 |
+
+---
+
+# Seasons
+
+PlayOrbs operates in seasons, providing regular reset points and fresh competition.
+
+## Season Parameters
+
+| Parameter | Value |
+|-----------|-------|
+| Rounds per season | 60,000 |
+| Approximate duration | ~3 months |
+| Pool source | 50 PORB per emission |
+
+## Season 0 (Genesis Phase)
+
+| Feature | Season 0 | Season 1+ |
+|---------|----------|-----------|
+| PORB Emissions | Disabled | Enabled |
+| Points | Accumulate for conversion | Earn direct rewards |
+| LP Fees | Accumulate toward genesis | Normal operation |
+| Season Pool | None | 50 PORB per emission |
+
+After 25 SOL accumulates in the LP vault:
+1. Genesis triggers
+2. Points convert to PORB (50 points = 1 PORB)
+3. Season 1 begins with emissions enabled
+
+## Claiming Rewards
+
+After a season ends:
+1. Snapshot Created: Final rankings frozen
+2. Claims Open: Players can claim their share
+3. Calculation: Your Share = (Your Points / Total Points) × Pool
+
+---
+
+# Matrix Game
+
+The Matrix is a memory-based mini-game played before each round. Your performance determines how many Skill Points (SP) you earn to allocate across your orb's abilities.
+
+## Game Phases
+
+### Phase 1: Reveal (Memorize)
+Tiles are revealed one at a time in sequence. Some tiles contain Skill Points marked with "SP" — memorize their positions. Duration: ~7 seconds.
+
+### Phase 2: Hunt
+The grid is hidden. Click tiles to find the SP you memorized. Limited number of attempts.
+
+### Phase 3: Shuffle
+After finding 2 or more SP, the grid shuffles to increase difficulty. Rows and columns slide in random directions.
+
+### Phase 4: Results
+Shows your performance and total earned SP.
+
+### Phase 5: Allocate
+Distribute your earned SP across three skills:
+- **Split Aggro** — More splitting, but weaker children
+- **Tether Resistance** — Break enemy tethers easier
+- **Orb Power** — Higher maximum speed
+
+Maximum of 4 points per skill.
+
+## Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| Grid Size | 6x6 (36 total tiles) |
+| SP Tiles | 9 |
+| Max Per Skill | 4 |
+
+## Skill Point Conversion
+
+```
+multiplier = 1 + 0.5 * (1 - e^(-0.5 * points))
+```
+
+| Points | Multiplier | Bonus |
+|--------|------------|-------|
+| 0 | 1.00x | +0% |
+| 1 | 1.11x | +11% |
+| 2 | 1.18x | +18% |
+| 3 | 1.22x | +22% |
+| 4 | 1.24x | +24% |
+
+## Determinism
+
+The Matrix game is deterministic per player per round:
+- Your personal seed is derived from: sha256(round_seed || tier_id || player || round_id)
+- Same seed always produces same SP tile positions
+
+---
+
+# Early Exit (EE)
+
+Early Exit is an optional mechanism that lets players exit early when they've earned enough.
+
+## How It Works
+
+1. Set a Target: When joining, specify a target earnings amount
+2. Play Normally: Compete and earn bounty from kills
+3. Auto-Exit: If your earnings hit the target, you automatically claim and exit
+4. Orb Removed: Your orb is removed from the arena
+
+## EE Presets
+
+| Preset | Target | Strategy |
+|--------|--------|----------|
+| Safe | ~2 kills value | Minimize risk |
+| Balanced | ~4 kills value | Moderate approach |
+| Aggressive | ~6 kills value | High upside |
+| YOLO | No EE | Maximum risk/reward |
+
+## Edge Cases
+
+- Kill resolves first; EE cannot "save" you from death
+- Multiple EE same frame: Allowed, all qualifying players exit
+- Final Survivor: EE is skipped; winner receives survival pool + remaining bounty
+- EE applies per owner, not per orb
+
+## Frame Processing Order
+
+1. Elimination attribution → distribute kill bounty
+2. Inheritance (if enabled)
+3. EE checks → emit triggers
+4. Prune EE'd orbs
+5. Finalize if alive ≤ 1
+
+---
+
+# Skills & Strategy
+
+PlayOrbs features a skill system that allows players to influence gameplay outcomes through strategic stat allocation.
+
+## The Three Skills
+
+### Tether Defense
+Raises the speed threshold enemies need to break YOUR tethers. Defensive only.
+```
+effectiveBreakSpeed = baseBreakSpeed * tetherDefMul
+```
+
+### Power (Orb Speed)
+Increases your orb's maximum velocity cap.
+```
+effectiveMaxSpeed = baseMaxSpeed * powerMul
+```
+
+### Split Aggression
+Lowers your own split thresholds, making your orb more likely to split on high-impact collisions.
+```
+effectiveThreshold = baseThreshold / sqrt(splitAggroMul)
+```
+Tradeoff: Child orbs receive reduced Tether Defense (childTetherDef = parentTetherDef * 0.9, floored at 0.7x).
+
+## Allocation Strategies
+
+| Strategy | Split | Tether | Power | Playstyle |
+|----------|-------|--------|-------|-----------|
+| Balanced | 1-2 | 1-2 | 1-2 | Flexible |
+| Aggressive | 0 | 3-4 | 1-2 | Focuses on eliminations |
+| Swarm | 3-4 | 1 | 0 | Many orbs |
+| Speed | 0 | 1-2 | 3-4 | Fast movement |
+
+## Skill Interactions
+
+| Your Build | Strong Against | Weak Against |
+|------------|----------------|--------------|
+| High Tether Def | Low-power attackers | High-power orbs |
+| High Power | Evasive players | Swarm tactics |
+| High Split Aggro | Single-orb players | AoE shockwaves |
+
+---
+
+# Points System
+
+Points measure your performance and determine your share of season rewards.
+
+## Points Constants
+
+| Category | Value |
+|----------|-------|
+| 1st Place | +500 |
+| 2nd Place | +350 |
+| 3rd Place | +250 |
+| Kill Bonus | +100 per kill |
+| Participation | +50 |
+
+## Calculation
+
+```
+points = 50 (participation floor)
+if placement == 1: points += 500
+if placement == 2: points += 350
+if placement == 3: points += 250
+points += kills × 100
+points = points × tier_multiplier / 100
+```
+
+## Points Matrix
+
+| Placement | 0 Kills | 1 Kill | 3 Kills | 5 Kills |
+|-----------|---------|--------|---------|---------|
+| 1st | 550 | 650 | 850 | 1,050 |
+| 2nd | 400 | 500 | 700 | 900 |
+| 3rd | 300 | 400 | 600 | 800 |
+| 4th+ | 50 | 150 | 350 | 550 |
+
+Values shown at 1.0x multiplier.
+
+## Tier Multipliers
+
+| Tier | Multiplier |
+|------|------------|
+| 0 | 1.0x |
+| 1 | 1.5x |
+| 2 | 2.0x |
+| 3 | 3.0x |
+
+## Points Accumulation
+
+- **Season Points**: Reset each season, determine leaderboard ranking and pool share
+- **Total Points**: Never reset, track lifetime achievement
+
+---
+
+# PORB Emissions
+
+After Genesis, rounds can trigger PORB token emissions to early joiners and the season pool.
+
+## Emission Distribution (250 PORB total)
+
+| Recipient | Amount | Share |
+|-----------|--------|-------|
+| 1st Joiner | 100 PORB | 40% |
+| 2nd Joiner | 60 PORB | 24% |
+| 3rd Joiner | 40 PORB | 16% |
+| Season Pool | 50 PORB | 20% |
+
+## Emission Probability
+
+- Probability increases by 5% per round since last emission
+- At round 20: Guaranteed emission (100%)
+- Average: ~1 emission per 10 rounds
+
+## Epoch Decay
+
+| Epoch | Years | Emission Rate |
+|-------|-------|---------------|
+| 0 | 0-2 | 250 PORB |
+| 1 | 2-4 | 212 PORB |
+| 2 | 4-6 | 180 PORB |
+| 3 | 6-8 | 153 PORB |
+| 4 | 8-10 | 130 PORB |
+
+Each epoch is ~2 years. Emission rate decays by 15% per epoch.
+
+## Supply Cap
+
+- Total supply: 100,000,000 PORB
+- Genesis mint: 500,000 PORB
+- Post-genesis budget: 99,500,000 PORB
+- When budget is exhausted, emissions stop permanently.
+
+---
+
+# Leaderboards
+
+Players are ranked by season points. Higher points = higher leaderboard position.
+
+## Climbing the Leaderboard
+
+| Tier | Multiplier | Climb Speed |
+|------|------------|-------------|
+| 0 | 1.0x | Normal |
+| 1 | 1.5x | 50% faster |
+| 2 | 2.0x | 100% faster |
+| 3 | 3.0x | 200% faster |
+
+## Strategies
+
+- **Volume**: Play many games at lower tiers for consistent small gains
+- **High-Tier**: Fewer games but bigger points per game
+- **Hybrid**: Mix tiers based on confidence
+
+---
+
+# Referral Program
+
+## Rewards
+
+| Reward Type | Amount |
+|-------------|--------|
+| SOL | 10% of their entry fee |
+| Points | 20 points per join |
+
+## Reward Flow
+
+Referred Player Entry → 80% Prize Pool + 20% Protocol → 50% LP Vault + 50% Dev Split → 90% Dev + 10% Referrer
+
+## Milestone Bonuses
+
+| Milestone | Referrals | Bonus Points |
+|-----------|-----------|--------------|
+| Referrer Rookie | 1 | 500 |
+| Referrer Pro | 50 | 5,000 |
+| Referrer Legend | 250 | 10,000 |
+
+## Rules
+
+- Referrer is set permanently on first game
+- Self-referral is blocked
+- Rewards calculated per transaction from protocol fees
+
+---
+
+# Achievements
+
+## Seasonal Achievements (reset each season)
+
+| Achievement | Requirement |
+|-------------|-------------|
+| First Blood | Play 1 round |
+| Getting Warm | Play 5 rounds |
+| Committed | Play 25 rounds |
+| Miner | Earn PORB emission |
+| Champion | Win 1 round |
+| Killing Spree | 3+ kills in one round |
+| Hot Streak | 2 consecutive wins |
+
+## Lifetime Achievements (one-time)
+
+| Achievement | Requirement |
+|-------------|-------------|
+| Nickname Pioneer | First to set nickname |
+| Referrer Rookie | Refer 1 player |
+| Referrer Pro | Refer 50 players |
+| Referrer Legend | Refer 250 players |
+
+---
+
+# PORB Token
+
+## Token Specification
+
+| Property | Value |
+|----------|-------|
+| Name | PORB |
+| Symbol | PORB |
+| Decimals | 9 |
+| Smallest Unit | 1 atom = 10⁻⁹ PORB |
+| Total Supply Cap | 100,000,000 PORB |
+| Mint Authority | PDA-controlled |
+
+## Token Utility
+
+| Use Case | Description |
+|----------|-------------|
+| Emissions Reward | First 3 joiners per round can earn PORB |
+| Season Pool | Proportional rewards for leaderboard performance |
+| Governance | Future voting on protocol parameters |
+| Tournament Entry | Special events may require PORB |
+| Cosmetics/NFTs | Unlock exclusive in-game items |
+
+## Fair Launch Principles
+
+| Allocation | Amount |
+|------------|--------|
+| Team/Advisors | 0% |
+| Investors | 0% |
+| Treasury | 0% |
+| Gameplay | 100% |
+
+## What Makes PORB Different
+
+- **Liquidity-Backed**: Every PORB backed by real game fees in CLMM pool
+- **Deflationary Pressure**: Buyback mechanism purchases PORB with protocol fees
+- **Sustainable Emissions**: Epoch decay ensures 100+ year longevity
+- **Verifiable Scarcity**: On-chain supply tracking, PDA-controlled mint
+
+---
+
+# Supply Mechanics
+
+## Supply Overview
+
+- Hard Cap: 100,000,000 PORB
+- Genesis Mint: 500,000 PORB (0.5%) — Season 0 point conversions + initial CLMM liquidity
+- Post-Genesis Emissions: 99,500,000 PORB (99.5%) — Probabilistic per-round emissions with epoch decay
+
+## Supply Cap Enforcement
+
+```rust
+let cap_atoms = 100_000_000_000_000_000;
+let remaining = cap_atoms - root.total_minted_orb;
+let actual_mint = min(requested_mint, remaining);
+root.total_minted_orb += actual_mint;
+```
+
+No minting possible beyond the cap. No private key exists—only the program can authorize mints.
+
+## Long-Term Projections
+
+| Epoch | Years | Rate | Annual | Cumulative |
+|-------|-------|------|--------|------------|
+| 0 | 0-2 | 250 PORB | ~6.5M | 6.5M |
+| 1 | 2-4 | 212 PORB | ~5.5M | 12.0M |
+| 2 | 4-6 | 180 PORB | ~4.7M | 16.7M |
+| 10 | 20-22 | 49 PORB | ~1.3M | 37.0M |
+
+Total projected emissions converge to ~43.8M PORB, well under the 99.5M budget.
+
+---
+
+# Genesis Bootstrap
+
+Genesis is the one-time event that transitions from Season 0 to active token emissions.
+
+## Genesis Trigger
+
+When lp_accum_sol >= 25 SOL:
+
+1. Mint 500,000 PORB
+2. Create CLMM Pool: 250,000 PORB + 25 SOL on Raydium CLMM
+   - Initial price: 0.0001 SOL/PORB
+   - Range: -30% lower, ∞ upper
+3. Lock Position NFT permanently
+4. Enable Conversions: 50 points = 1 PORB, cap 250,000 PORB
+5. Start Season 1 with emissions enabled
+
+## Conversion Mechanics
+
+```
+base_ratio = 50 points per PORB
+needed_ratio = max(50, ceil(total_points / 250,000))
+```
+
+If total season 0 points exceed what 250k PORB can cover at 50:1, the ratio increases.
+
+## Genesis Parameters
+
+| Parameter | Value |
+|-----------|-------|
+| Threshold | 25 SOL |
+| Genesis PORB Cap | 500,000 PORB |
+| Conversion Cap | 250,000 PORB |
+| Base Rate | 50 points = 1 PORB |
+| Initial Price | 0.0001 SOL/PORB |
+
+---
+
+# Epoch Decay
+
+Emissions decrease over time through epoch-based decay.
+
+## Epoch Definition
+
+```
+epoch_index = floor(total_rounds_since_genesis / epoch_rounds)
+epoch_rounds = 525,600 (default)
+At ~2 min/round: 1 epoch ≈ 2 years
+```
+
+## Decay Formula
+
+```
+E(n) = E₀ × r^n
+E₀ = base emission (250 PORB)
+r = retention rate (0.85)
+n = epoch_index
+```
+
+## Emission Schedule
+
+| Epoch | Years | Per Emission | ~Annual |
+|-------|-------|--------------|---------|
+| 0 | 0-2 | 250 PORB | 6.5M |
+| 1 | 2-4 | 212 PORB | 5.5M |
+| 2 | 4-6 | 180 PORB | 4.7M |
+| 5 | 10-12 | 111 PORB | 2.9M |
+| 10 | 20-22 | 49 PORB | 1.3M |
+| 20 | 40-42 | 10 PORB | 0.3M |
+
+## Mathematical Proof of Convergence
+
+```
+Total = E₀ × N × (1 / (1 - r))
+     = 250 × 26,280 × 6.67
+     ≈ 43.8M PORB
+```
+
+Well under the 99.5M budget.
+
+## Decay Constants
+
+| Constant | Value |
+|----------|-------|
+| EPOCH_ROUNDS_DEFAULT | 525,600 |
+| DECAY_BPS_DEFAULT | 8,500 (85% retention) |
+| EMIT_BASE_DEFAULT | 250 PORB |
+
+---
+
+# Liquidity Management
+
+The protocol uses Raydium's Concentrated Liquidity Market Maker (CLMM).
+
+## CLMM Integration
+
+| Parameter | Value |
+|-----------|-------|
+| Pool Type | Raydium CLMM |
+| Token Pair | PORB / WSOL |
+| Initial Price | 0.0001 SOL/PORB |
+| Price Range | -30% to +∞ |
+| Slippage Tolerance | 500 bps (5%) |
+
+## Buyback Mechanism
+
+When LP vault accumulates sufficient SOL:
+1. Swap 50% of vault: WSOL → PORB via CLMM
+2. Remaining 50% WSOL + bought PORB → increase liquidity
+3. Repeat as fees accumulate
+
+## Position Locking
+
+The CLMM position NFT is permanently locked:
+- Cannot be withdrawn
+- Guarantees permanent liquidity
+- Prevents rug pulls
+
+## Self-Reinforcing Loop
+
+More players → more fees → more buybacks → more liquidity → better UX → more players
+
+---
+
+# Economic Sustainability
+
+The PlayOrbs economy is designed as a self-sustaining loop where gameplay generates real value.
+
+## Key Economic Properties
+
+| Property | Mechanism |
+|----------|-----------|
+| Non-Inflationary | Hard cap at 100M PORB |
+| Liquidity-Backed | Every PORB backed by real game fees |
+| Deflationary Pressure | Buybacks add PORB to locked liquidity |
+| Sustainable Emissions | Epoch decay prevents rapid depletion |
+| Real Yield | SOL prizes from actual player entry fees |
+
+## Why This Works
+
+1. **Real Value In**: Players pay SOL to play (external market value)
+2. **Real Value Out**: Winners receive SOL prizes (not dependent on token price)
+3. **Token Value Creation**: Fees fund buybacks, buybacks create demand, locked liquidity supports price floor
+4. **Long-Term Viability**: Epoch decay extends emissions 100+ years
+
+## Economic Phases
+
+- **Early (Years 0-2)**: High emissions attract players, community builds, liquidity deepens
+- **Growth (Years 2-6)**: Emissions decay, buybacks become significant, price stability improves
+- **Maturity (Years 6+)**: Reduced emissions, buyback dominates, strong liquidity
+- **Steady State**: Fixed supply, value from utility only, self-sustaining through fees
+
+---
+
+# Architecture Overview
+
+PlayOrbs is a dual-chain application powered by Solana and the Internet Computer (ICP).
+
+## Program Identification
+
+| Property | Value |
+|----------|-------|
+| Program ID | CZGSRyEqc9RkCsGbknF92FQQJqPF7SzQDH7avmfRUaqd |
+| Framework | Anchor 0.32.1 |
+| Runtime | Solana BPF |
+| Token Standard | SPL Token (9 decimals) |
+
+## Core Components
+
+### On-Chain Layer
+- **RootAccount**: Global configuration and state
+- **RoundPages**: Paged storage for round data
+- **PlayerStats**: Per-season player statistics
+- **SeasonSnapshots**: Frozen season data for claims
+
+### ICP — Randomness Layer
+- Threshold Randomness: Seeds generated by distributed subnet nodes
+- Merkle Proofs: Cryptographic binding of seeds to specific rounds
+- ECDSA Signatures: Non-repudiable proof of authenticity
+- Unpredictable: No one can predict or influence outcomes
+
+### Raydium — Liquidity Layer
+- Concentrated liquidity for PORB/WSOL
+- Automated buyback mechanism
+- Locked position for permanent liquidity
+
+## Security Model
+
+| Layer | Mechanism |
+|-------|-----------|
+| Access Control | Authority-based with has_one constraints |
+| Membership | PDA-based proofs (RoundPlayer) |
+| Idempotency | Flag-based tracking |
+| Randomness | ICP threshold cryptography |
+| Funds | PDA-controlled vaults |
+
+---
+
+# Account Structures
+
+## Account Summary
+
+| Account | PDA Seeds | Size | Purpose |
+|---------|-----------|------|---------|
+| RootAccount | ["root"] | ~560 bytes | Global configuration & state |
+| RoundPage | ["round_page", tier_id, page_index] | ~23.5 KB | Paged round storage |
+| RoundPlayer | ["rp", tier_id, round_id, player] | 86 bytes | Membership proof |
+| PlayerStats | ["ps", season_id, player] | 129 bytes | Per-season statistics |
+| Vault | ["vault", tier_id, round_id] | ~165 bytes | Prize pool escrow |
+| SeasonSnapshot | ["season_snapshot", season_id] | 59 bytes | Frozen season data |
+
+## RootAccount
+
+```rust
+struct RootAccount {
+    authority: Pubkey,
+    dev_wallet: Pubkey,
+    orb_mint: Pubkey,
+    season_id: u64,
+    season_rounds_total: u64,
+    season_rounds_played: u64,
+    current_season_total_points: u128,
+    season_pool_orb: u128,
+    genesis_done: bool,
+    conversion_open: bool,
+    lp_accum_sol: u64,
+    genesis_threshold_lamports: u64,
+    genesis_orb_cap: u64,
+    orbs_minted_from_conversion: u64,
+    points_per_orb_effective: u64,
+    total_minted_orb: u128,
+    emission_budget_cap: u128,
+    total_rounds_since_genesis: u64,
+    last_emission_round: u64,
+    epoch_index: u32,
+    epoch_rounds: u64,
+    decay_bps: u16,
+    hazard_cap_rounds: u64,
+    emit_base: u128,
+    tier_configs: Vec<TierConfig>,
+    tier_states: Vec<TierState>,
+    dev_fee_bps: u16,
+}
+```
+
+## RoundPlayer
+
+```rust
+struct RoundPlayer {
+    tier_id: u8,
+    round_id: u64,
+    player: Pubkey,
+    payout_processed: bool,
+    stats_applied: bool,
+    account_index: u16,
+    referrer: Option<Pubkey>,
+}
+```
+
+## PlayerStats
+
+```rust
+struct PlayerStats {
+    season_id: u64,
+    player: Pubkey,
+    season_points: u64,
+    total_points: u64,
+    rounds_played: u32,
+    wins: u32,
+    kills: u32,
+    sol_earned_lamports: u64,
+    orb_earned_atoms: u64,
+    season_pool_claimed: bool,
+}
+```
+
+## Storage Optimization
+
+- Rounds stored in pages: Page Index = floor(round_id / 120), Slot Index = round_id % 120
+- PDA-based membership reduces transaction size and enables efficient RPC filtering
+
+---
+
+# Instruction Reference
+
+The PlayOrbs program exposes 18 instructions.
+
+## Player Instructions
+
+- **join_round**: Player enters round by paying entry fee
+- **convert_points**: Convert Season 0 points to PORB (post-genesis)
+- **claim_season_pool**: Claim proportional share of season pool
+- **init_referral**: Set referrer (one-time)
+- **claim_referral_rewards**: Claim accumulated referral SOL rewards
+- **set_nickname**: Set unique player nickname
+
+## Authority Instructions
+
+- **initialize_root**: One-time program setup
+- **settle_round**: Set seed, trigger emissions
+- **round_payout**: Distribute SOL prizes
+- **update_player_stats**: Award points
+- **close_round_player**: Reclaim rent
+- **check_and_run_genesis**: Trigger genesis
+
+## Liquidity Instructions
+
+- **open_position**: Create initial CLMM position
+- **increase_liquidity**: Add to CLMM
+- **lock_position**: Lock position NFT permanently
+- **buyback**: WSOL → PORB swap via CLMM
+
+---
+
+# Security Model
+
+## Access Control Matrix
+
+| Operation | Signer Required |
+|-----------|-----------------|
+| join_round | Player |
+| settle_round | Authority |
+| round_payout | Authority |
+| update_player_stats | Authority |
+| convert_points | Player |
+| claim_season_pool | Player |
+| manage_liquidity | Authority |
+
+## Security Mechanisms
+
+- **PDA-Based Membership**: Membership proven via PDAs, no array size limits
+- **Idempotency Tracking**: Flags prevent double-processing (payout_processed, stats_applied, did_emit, season_pool_claimed)
+- **Vault Security**: PDA-controlled vaults, no private key exists
+- **Arithmetic Safety**: Saturating operations, no floating-point
+- **Supply Cap Enforcement**: Hard cap on-chain, min(requested, remaining)
+
+## Attack Vectors & Mitigations
+
+| Attack | Mitigation |
+|--------|------------|
+| Double-spend payout | payout_processed flag |
+| Double-claim points | stats_applied flag |
+| Emission manipulation | Deterministic SHA-256 |
+| Supply inflation | Hard cap + tracking |
+| Vault drain | PDA-only access |
+| Front-running | ICP seed generation |
+| Rug pull | Locked LP position |
+
+---
+
+# Settlement Flow
+
+## Pipeline
+
+1. Game Ends (off-chain)
+2. Generate Seed (ICP Canister)
+3. Determine Winners (off-chain logic)
+4. Call settleRound (seed + signature)
+5. Call roundPayout (distribute SOL)
+6. Call updatePlayerStats (award points)
+7. Call closeRoundPlayers (reclaim rent)
+
+---
+
+# Randomness Overview
+
+Fair randomness is essential for trustless gaming. PlayOrbs uses ICP threshold cryptography.
+
+## Three Key Properties
+
+1. **Cryptographic Unpredictability**: Seeds from ICP's distributed randomness (requires supermajority collusion to predict)
+2. **Public Verifiability**: Every seed has a Merkle proof and ECDSA signature
+3. **Temporal Binding**: Seeds cryptographically bound to specific rounds
+
+## Trust Model
+
+| Assumption | Description |
+|------------|-------------|
+| ICP Network Security | Supermajority of subnet nodes must be honest |
+| Cryptographic Hardness | SHA-256 and ECDSA remain secure |
+| Canister Integrity | Deployed code matches audited source |
+
+Administrators are NOT trusted for seed generation.
+
+## Key Parameters
+
+| Parameter | Value |
+|-----------|-------|
+| Chunk Size | 50 seeds |
+| Seed Size | 32 bytes |
+| Hash Function | SHA-256 |
+| Signature Curve | secp256k1 |
+
+---
+
+# ICP Integration
+
+The ICP Orbs canister provides cryptographically verifiable random seeds.
+
+## The Chunk Model
+
+Seeds are produced in batches of 50:
+- Chunk 0: Rounds 0-49
+- Chunk 1: Rounds 50-99
+- chunk_id = round_id / 50
+
+## Canister Functions
+
+- **generate_and_store_chunk**: Generates 50 seeds, builds Merkle tree, signs root
+- **reveal_seed_for_round**: Returns seed with full verification proof
+- **chunk_exists**: Verifies if a chunk has been generated
+
+## Entropy Source
+
+ICP's raw_rand() function generates randomness through threshold BLS signatures across subnet nodes. A supermajority would need to collude to predict the output.
+
+---
+
+# Seed Generation
+
+Seeds are derived from ICP's threshold randomness and committed via Merkle trees.
+
+## Derivation Process
+
+1. Obtain master seed from raw_rand() (32 bytes)
+2. Derive 50 individual seeds: seed[i] = SHA256(master_seed || i.to_be_bytes())
+3. Immediately discard master seed
+
+## Merkle Tree Construction
+
+### Leaf Construction
+```
+leaf_hash = SHA256("orbs-leaf" || season_id || tier_id || round_id || seed)
+```
+
+The round_id prevents proof reuse across rounds.
+
+### Signed Message Format
+```
+"OrbsChunkRoot\nSeason:{season_id}\nTier:{tier_id}\nChunk:{chunk_id}\nRoot:{root_hex}"
+```
+
+Signed with ICP's threshold ECDSA (secp256k1).
+
+---
+
+# Sequential Revelation
+
+Seeds are revealed in strict sequence to prevent gaming.
+
+## Enforced Ordering
+
+1. Each (season, tier) pair maintains a last_settled_round counter
+2. Seed requests only honored for last_settled_round + 1
+3. After successful revelation, counter increments
+4. Requests for already-revealed rounds return cached proofs
+5. Requests for future rounds are rejected
+
+## Preventing Gaming
+
+| Attack | Mitigation |
+|--------|------------|
+| Pre-fetch future seeds | Rejected—counter must match |
+| Selective round avoidance | Seeds unknown until settlement |
+| Replay old proofs | Round-ID binding invalidates them |
+
+---
+
+# Verification
+
+Every seed proof undergoes a four-step verification process on-chain.
+
+## Step 1: Chunk ID Validation
+Ensures seed comes from correct chunk: expected_chunk_id = round_id / 50
+
+## Step 2: ECDSA Signature Verification
+Recovers public key from signature, compares to known ICP canister key.
+
+## Step 3: Leaf Hash Computation
+```
+leaf_hash = SHA256("orbs-leaf" || season_id || tier_id || round_id || seed)
+```
+Binds seed to THIS specific round.
+
+## Step 4: Merkle Proof Verification
+Recomputes path from leaf to root, verifies computed_root == merkle_root.
+
+## Security Properties
+
+| Property | Mechanism | Attack Prevented |
+|----------|-----------|------------------|
+| Authenticity | ECDSA signature | Fake seed injection |
+| Integrity | Merkle proof | Seed tampering |
+| Uniqueness | Round-ID binding | Cross-round reuse |
+| Pre-commitment | ICP canister storage | Authority manipulation |
+
+---
+
+# Engine Overview
+
+The Orbs Battle Game runs on a fully deterministic physics engine at 120 Hz.
+
+## Core Principles
+
+| Principle | Description |
+|-----------|-------------|
+| Fixed Timestep | 120 FPS physics simulation |
+| Determinism | Identical outcomes from identical seeds |
+| Modularity | Configurable parameters |
+| Blockchain-Ready | Cryptographic hashing of configs and states |
+
+## Current Configuration
+
+| Category | Settings |
+|----------|----------|
+| Arena | Circle, 190px radius |
+| Physics | Slightly super-elastic (1.08 wall, 1.008 orb-orb) |
+| Speed | 4.0-9.5 normal, up to 25.0 endgame |
+| Spawning | Ring-based, stationary start |
+| Gravity | Minimal base, oscillates below 3 orbs |
+| Tethers | 200-frame immunity, 7.5 break speed minimum |
+| Splits | Disabled |
+| Sudden Death | At 5 seconds, 16x gravity, spiral center |
+| Shockwaves | Enabled, triggered by impacts and splits |
+
+---
+
+# Collision Physics
+
+Orbs collide elastically, transferring momentum and potentially triggering eliminations.
+
+## Collision Detection
+
+Two orbs collide when their centers are closer than the sum of their radii.
+
+## Configuration
+
+| Parameter | Current Value |
+|-----------|---------------|
+| orbRestitution | 1.004 |
+
+Current config adds very slight energy, creating gradually faster gameplay.
+
+## Collision Events
+
+- **Tether Breaking**: If colliding orb is fast enough and hits a tether
+- **Shockwaves**: High-impact collisions emit shockwaves that cut nearby tethers
+- **Eliminations**: When all of a player's tethers are broken
+
+## Orb Properties
+
+| Property | Value |
+|----------|-------|
+| radius | 12px |
+| baseSpeed | 2.0 |
+| colors | 6 |
+
+---
+
+# Gravity System
+
+Central gravity pulls orbs toward the arena center, with optional oscillation.
+
+## Current Configuration
+
+- Base Gravity: 0.000001 (very subtle)
+- Amplitude: 40% of base
+- Period: 40 frames (~0.33 seconds)
+- Activates Below: 3 orbs
+
+## Oscillation Behavior
+
+When oscillation activates: gravity pulses between 0.6x and 1.4x of base at 40-frame intervals.
+
+---
+
+# Tether System
+
+Tethers are protective lines connecting orbs to boundary anchor points. Breaking all tethers eliminates a player.
+
+## Current Configuration
+
+- Hit Damping: 0.125 (12.5% speed reduction)
+- Spring: Disabled (K=0)
+- Break Speed Minimum: 7.5
+- Immunity: 200 frames (~1.67 seconds)
+
+## Breaking Conditions
+
+1. Immunity has expired
+2. Colliding orb speed ≥ breakSpeedMin
+3. Orb intersects the tether line
+
+## Elimination
+
+All tethers broken → Player eliminated → Kill credited → Orb removed
+
+---
+
+# Boundary System
+
+## Current Configuration
+
+- Shape: Circle
+- Radius: 190px
+- Restitution: 1.02 (slightly accelerating)
+- Tangent Impulse: 0.01 (minimal sideways kick)
+- Min Speed: 2.0
+- Max Speed: 8.0 (normal), 20.0 (endgame)
+- Endgame Ramp: 400 frames (~3.3 seconds)
+- Direction: Random per bounce (CW/CCW)
+
+---
+
+# Sudden Death
+
+Sudden death activates when matches run long, dramatically increasing intensity.
+
+## Current Configuration
+
+- Trigger: 600 frames (~5 seconds when 2 orbs remain)
+- Gravity: 2x multiplier
+- Center Shift: 0.1 radius, 150-frame period
+- Tangent Impulse: 5x multiplier
+- Restitution: 1.2x multiplier
+
+## Effects
+
+- Boundary bounces become more chaotic
+- Collisions are more energetic
+- Gravity center spirals, creating a whirlpool
+- Orb splits allowed in endgame
+
+---
+
+# Split Mechanic
+
+When orbs collide with enough force, they can split into two smaller orbs.
+
+## Current Configuration
+
+- Enabled below 2 orbs (endgame only)
+- VN Threshold: 5.5
+- KE Threshold: 25.0
+- Radius Scale: 1.0 (same size)
+- Child Speed: 0.5x parent speed
+- Max Generations: 2
+- Cooldown: 180 frames
+- Max Orbs: 24
+
+## Ownership Tracking
+
+Split children inherit the parent's owner. Game tracks unique players, not orb count:
+- Game ends when countUniqueOwners(orbs) <= 1
+
+---
+
+# Parameter Reference
+
+## Boundary
+
+| Parameter | Default |
+|-----------|---------|
+| shape | circle |
+| radius | 190 |
+| restitution | 1.08 |
+| tangentImpulse | 0.02 |
+| minSpeed | 4.0 |
+| maxSpeed | 9.5 |
+| twoOrbsMaxSpeed | 25.0 |
+| twoOrbsRampFrames | 300 |
+
+## Orb
+
+| Parameter | Default |
+|-----------|---------|
+| radius | 12 |
+| baseSpeed | 4.0 |
+| orbRestitution | 1.008 |
+
+## Gravity
+
+| Parameter | Default |
+|-----------|---------|
+| base | 0.000001 |
+| ampFrac | 0.4 |
+| periodFrames | 40 |
+| oscillateBelowOrbs | 3 |
+
+## Tether
+
+| Parameter | Default |
+|-----------|---------|
+| hitDamping | 0.125 |
+| breakSpeedMin | 7.5 |
+| immunityFrames | 200 |
+
+## Shockwave
+
+| Parameter | Default |
+|-----------|---------|
+| enabled | true |
+| lifeFrames | 40 |
+| maxRadius | 100 |
+| ringThickness | 5 |
+| impactThreshold | 8.0 |
+
+## Split
+
+| Parameter | Default |
+|-----------|---------|
+| enabled | false |
+| vnThreshold | 10 |
+| keThreshold | 100 |
+| radiusScale | 0.7 |
+| childSpeedMul | 0.8 |
+| maxGenerations | 2 |
+
+## Sudden Death
+
+| Parameter | Default |
+|-----------|---------|
+| enabled | true |
+| afterFrames | 600 |
+| durationFrames | 360 |
+| gravityMultiplier | 16 |
+| centerShiftRadius | 100 |
+| orbAttraction | 0.5 |
+
+## Spawn
+
+| Parameter | Default |
+|-----------|---------|
+| mode | rings |
+| pad | 58 |
+| startInset | 104 |
+| ringGap | 30 |
+| velocity | none |
+
+---
+
+# Fee Distribution
+
+Entry fees follow a transparent 80/20 split.
+
+## Fee Flow
+
+| Destination | Percentage |
+|-------------|------------|
+| Prize Vault | 80% |
+| Protocol Fees | 20% |
+
+### Protocol Fee Breakdown
+
+| Component | Share |
+|-----------|-------|
+| LP Vault | 50% |
+| Dev Split | 50% |
+| Referral | 10% of Dev |
+
+## Example (1 SOL entry)
+
+- Prize Pool: 0.800 SOL
+- LP Vault: 0.020 SOL
+- Dev Wallet: 0.018 SOL
+- Referrer: 0.002 SOL (if applicable)
+
+## Fee Invariants
+
+1. No protocol retention: 100% of vault goes to players
+2. Integer arithmetic: All calculations in lamports
+3. Deterministic: Same inputs always produce same outputs
+4. Transparent: All fees visible on-chain
+
+---
+
+# Reward Distribution
+
+The prize pool (80% of entries) splits into bounty (70%) and survival (30%) pools.
+
+## Example Pool (10 players at 1 SOL each)
+
+- Player Pool: 8.00 SOL (80%)
+- Bounty Pool: 5.60 SOL (70% of player pool)
+- Survival Pool: 2.40 SOL (30% of player pool)
+
+## Bounty Distribution
+
+Distributed per kill using a log-weighted schedule. Early kills earn more than late kills.
+
+## Survival Distribution
+
+Goes to the last player standing.
+
+## Final Winner Reward
+
+Winner receives survival pool + any remaining bounty.
+
+---
+
+# Kill Rewards
+
+Kill rewards follow a log-weighted schedule where early kills pay more.
+
+## Weight Function
+
+w(A) = 1 + log₂(A)
+
+| Alive Before | w(A) |
+|--------------|------|
+| 2 | 2.00 |
+| 5 | 3.32 |
+| 10 | 4.32 |
+| 32 | 6.00 |
+| 64 | 7.00 |
+
+## Properties
+
+- Exact sum equals bounty pool (rounding remainder to earliest kills)
+- Schedule precomputed at round start, never rescaled
+- Self-elimination: no kill credit, bounty goes to winner
+
+## Scaling with Player Count
+
+| Players | First Kill | Last Kill | Ratio |
+|---------|------------|-----------|-------|
+| 5 | ~1.25x avg | ~0.75x avg | 1.66x |
+| 10 | ~1.40x avg | ~0.65x avg | 2.16x |
+| 50 | ~1.70x avg | ~0.45x avg | 3.78x |
+
+---
+
+# Bounty Inheritance
+
+When Player A kills Player B, B's uncashed bounty transfers to A.
+
+## Kill Chain Effect
+
+Eliminating high-earners is valuable—their accumulated bounty transfers to the killer.
+
+## Inheritance + Early Exit
+
+Inheritance can instantly trigger EE if it pushes earnings over the target.
+
+## Invariants
+
+1. No minting: Transfers only move existing credits
+2. Sum preservation: Total bounty earned never exceeds pool
+3. Deterministic: Same game state produces same inheritance
+
+---
+
+# Tie Breaking
+
+When all remaining players are eliminated simultaneously, tie-break rules determine the winner.
+
+## Priority
+
+| Priority | Criterion | Higher Wins |
+|----------|-----------|-------------|
+| 1 | framesAlive | Yes |
+| 2 | kills | Yes |
+| 3 | rosterIndex | No (lower wins) |
+
+Roster index (join order) guarantees a unique winner.
+
+---
+
+# Glossary
+
+## Game Terms
+- **Orb**: Player's in-game representation
+- **Tether**: Protective line connecting orb to boundary anchor
+- **Round**: Single game session from open to settlement
+- **Tier**: Competition level with specific entry fee and multiplier
+- **Season**: Time-bounded competition period
+- **Arena**: Circular boundary (190px radius default)
+
+## Economic Terms
+- **Bounty Pool**: 70% of prize pool, distributed via kills
+- **Survival Pool**: 30% of prize pool, awarded to last standing
+- **Kill Reward**: SOL payment for eliminations (log-weighted)
+- **Early Exit (EE)**: Claim accumulated rewards early
+- **Bounty Inheritance**: Victim's uncashed bounty transfers to killer
+- **Lamports**: Smallest unit of SOL (1 SOL = 1,000,000,000 lamports)
+
+## Token Terms
+- **PORB**: Native token, earned through gameplay
+- **Emission**: Minting new PORB as rewards
+- **Epoch**: Period defining emission decay cycles
+- **Genesis Pool**: Initial PORB/SOL liquidity pool
+- **CLMM**: Concentrated Liquidity Market Maker (Raydium)
+
+## Technical Terms
+- **PDA**: Program Derived Address
+- **Anchor**: Solana framework for smart contracts
+- **Settlement**: Finalizing round with seed verification
+- **Seed**: Cryptographic randomness for deterministic outcomes
+- **Merkle Proof**: Proof verifying seed inclusion in committed tree
+- **ICP**: Internet Computer Protocol
+- **Canister**: Smart contract on ICP
+
+## Physics Terms
+- **Restitution**: Energy multiplier during collisions
+- **Gravity**: Central force pulling orbs to center
+- **Shockwave**: Expanding ring from collisions that cuts tethers
+- **Sudden Death**: Endgame phase with increased gravity
+- **Immunity Frames**: Protection period for new tethers
+
+## Abbreviations
+- SOL: Solana token
+- PORB: PlayOrbs token
+- EE: Early Exit
+- LP: Liquidity Provider
+- PDA: Program Derived Address
+- ICP: Internet Computer Protocol
+- CLMM: Concentrated Liquidity Market Maker
+- BPS: Basis Points (1/100 of 1%)
+
+---
+
+# Constants Reference
+
+## Token Constants
+
+| Constant | Value |
+|----------|-------|
+| TOKEN_DECIMALS | 9 |
+| TOTAL_SUPPLY_CAP | 100,000,000 |
+| INITIAL_EMISSION | 10 PORB |
+| DECAY_RATE | 0.85 |
+| EPOCH_LENGTH | 10 |
+
+## Fee Constants
+
+| Constant | Value |
+|----------|-------|
+| VAULT_SHARE | 80% |
+| PROTOCOL_SHARE | 20% |
+| LP_SHARE | 50% |
+| REFERRAL_SHARE | 10% |
+| DEV_FEE_BPS | 2000 |
+
+## Pool Constants
+
+| Constant | Value |
+|----------|-------|
+| BOUNTY_SHARE | 70% |
+| SURVIVAL_SHARE | 30% |
+
+## Scoring Constants
+
+| Constant | Value |
+|----------|-------|
+| FIRST_PLACE_PTS | 500 |
+| SECOND_PLACE_PTS | 350 |
+| THIRD_PLACE_PTS | 250 |
+| KILL_PTS | 100 |
+| PARTICIPATION_FLOOR_PTS | 50 |
+
+## Configuration Formulas
+
+- Kill Weight: w(A) = 1 + log₂(A)
+- Epoch Emission: E(n) = E₀ × (0.85)^n
+- Gravity Oscillation: g(t) = base × (1 + ampFrac × sin(2π × t / period))
+- Emission Probability: P(emit) = 1 - e^(-λ × Σorbits)
+
+---
+
+# Mathematical Proofs
+
+## Proof 1: Kill Reward Exact Sum
+The sum of all kill rewards equals the bounty pool. Implementation distributes rounding remainder to early kills.
+
+## Proof 2: Emission Decay Convergence
+Total emissions converge to ~43.8M PORB (well under 99.5M budget). T(∞) = e × E₀ × (1 / (1 - d)).
+
+## Proof 3: Fee Distribution Conservation
+All entry fees are distributed without loss or gain through integer arithmetic.
+
+## Proof 4: Bounty Inheritance Invariant
+Inheritance never creates new value. Net change in sum is always zero.
+
+## Proof 5: Hazard Rate Probability
+The emission probability function produces values in [0, 1] and is monotonically increasing.
+
+## Proof 6: Tie-Break Uniqueness
+The tie-break rule chain always produces exactly one winner (guaranteed by unique roster index).
+
+## Proof 7: Log-Weight Monotonicity
+Kill rewards decrease as fewer players remain (log is monotonic).
+
+---
+
+# SDK: Join Round
+
+The @playorbs/sdk provides a simple API to join game rounds programmatically.
+
+## Installation
+
+```bash
+npm install @playorbs/sdk
+# Peer dependencies:
+npm install @coral-xyz/anchor @solana/web3.js bn.js
+```
+
+## Quick Start
+
+```typescript
+import { OrbsGameSDK } from "@playorbs/sdk";
+import { Connection, Keypair } from "@solana/web3.js";
+import { AnchorProvider, Wallet } from "@coral-xyz/anchor";
+
+const connection = new Connection("https://api.mainnet-beta.solana.com");
+const wallet = new Wallet(Keypair.generate());
+const provider = new AnchorProvider(connection, wallet, { commitment: "confirmed" });
+const sdk = new OrbsGameSDK({ provider });
+```
+
+## API Reference
+
+### joinRound(options)
+
+```typescript
+interface JoinRoundOptions {
+  roundId: number;
+  tierId: number;
+  player: Keypair | WalletSigner;
+  tpPreset?: number;    // 0=Disabled, 1=Safe, 2=Balanced, 3=Fierce, 4=YOLO
+  referrer?: PublicKey;
+}
+// Returns: { signature: string }
+```
+
+### getNextRoundId(tierId: number)
+
+Get the next available round ID for a tier.
+
+## Error Handling
+
+| Error | Cause |
+|-------|-------|
+| RoundNotOpen | Round is full or already settled |
+| AlreadyJoined | Player already in this round |
+| InsufficientFunds | Not enough SOL for entry fee |
+
+---
+
+# Legal: Terms and Conditions
+
+Updated February 2026. Full terms available at https://docs.playorbs.com/legal/terms
+
+Key points:
+- Players must be 18+ and not in excluded jurisdictions (US, UK, Germany, Netherlands, sanctioned countries)
+- Non-custodial wallet-based access
+- Entry fees are non-refundable once collected by Smart Contract
+- No guarantee of any return on entry fees
+- PORB is not a security or investment product
+- PORB has no guaranteed value, price floor, or liquidity
+- Points have no monetary value
+- Service provided "as is" without warranties
+- Governed by Singapore law
+- Binding arbitration via Singapore International Arbitration Centre
+
+---
+
+# Legal: Privacy Policy
+
+Updated February 2026. Full policy available at https://docs.playorbs.com/legal/privacy_policy
+
+Key points:
+- Non-custodial, wallet-based model (no accounts, emails, or passwords required)
+- Data processed: wallet/blockchain data, network/security data, support communications, nicknames
+- Purposes: security, fraud prevention, jurisdictional compliance, dispute handling, platform operations
+- No profiling, behavioral tracking, or targeted advertising
+- Lawful bases: legitimate interests and legal obligations
+- Data retention: limited and transient for network data; blockchain data is public
+- Data not sold
+- Contact: privacy@playorbs.com
