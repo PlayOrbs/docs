@@ -104,7 +104,7 @@ const config: Config = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/Wh6NErMs',
+              href: 'https://discord.gg/E6Ae6waXXW',
             },
             {
               label: 'Telegram',

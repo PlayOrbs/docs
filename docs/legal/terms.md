@@ -771,7 +771,7 @@ In the event of a change of control, merger, acquisition, or sale of assets of P
 
 ## 24. Contact
 
-For questions regarding these Terms and Conditions, contact us at legal@playorbs.com or through our official [Discord server](https://discord.gg/Wh6NErMs).
+For questions regarding these Terms and Conditions, contact us at legal@playorbs.com or through our official [Discord server](https://discord.gg/E6Ae6waXXW).
 
 ---
 
