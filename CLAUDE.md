@@ -93,12 +93,15 @@ Cards live in `cards/` with shared styles in `cards/base.css`. Templates go in `
 
 ### Visual Design Requirements (MUST follow for all social media assets)
 
-**Goal**: Clean, minimalistic, easily recognizable illustrations using the main brand assets.
+**Goal**: Bold gamefi presence — cards should feel like an arena, not a slide deck. Clean but high-energy.
 
 - **No generic text** — use gaming-native language and terminology that fits the orbs universe
 - **Brand colors + neon accents** — use the existing logo palette as a base (#00ff88 green, dark backgrounds) and layer neon accents to make posts pop
-- **Energy and motion** — incorporate subtle glows, light trails, and particle effects to convey energy and movement
+- **Energy and motion** — use text-shadow glows on titles and key values, box-shadow glows on containers, and color-matched text-shadows on highlighted terminal/data text
+- **Large background orbs** — use `orb--xl` (72px) and `orb--xxl` (110px) bleeding off card edges for depth and arena scale. Pair with `orb--dim` for background layers. Always include multiple orbs at different sizes to create layered depth
+- **Tether lines** — add 2-4 `orb-tether` elements at varying angles to create collision/arena energy in the background
+- **Glow on containers** — any surface element (terminal boxes, stat panels, feature cards) should have a subtle green-tinted box-shadow and border (e.g., `border: 1px solid rgba(0,255,136,0.12)`, multi-layer `box-shadow` with green tones)
 - **Modular templates** — design dynamic, recognizable layouts and templates for banners and posts that are reusable across announcements, gameplay highlights, and interactive content
 - **Visual consistency** — every asset should be instantly identifiable as PlayOrbs; consistent style drives engagement, shares, and follows
-- **Minimalism first** — keep illustrations clean and uncluttered; let the brand assets (orbs, logo, colors) do the heavy lifting
-- **Feed presence** — assets must stand out in crowded feeds to increase impressions and grow an engaged community
+- **Minimalism in content, not energy** — keep text and layout clean, but push the background energy (orbs, tethers, glows) to make cards scroll-stopping
+- **Feed presence** — cards must stand out in crowded feeds. If a card looks like it could belong to any project, it needs more PlayOrbs energy

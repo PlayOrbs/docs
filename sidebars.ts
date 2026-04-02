@@ -56,6 +56,7 @@ const sidebars: SidebarsConfig = {
         'technical/account-structures',
         'technical/instruction-reference',
         'technical/settlement-flow',
+        'technical/round-verification',
         'technical/security-model',
       ],
     },
