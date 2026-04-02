@@ -90,3 +90,15 @@ Cards live in `cards/` with shared styles in `cards/base.css`. Templates go in `
 - Emphasize that this is a skill-based game
 - Keep copy concise and suitable for a single card
 - Do not add disclaimers — just use clean, compliant copy
+
+### Visual Design Requirements (MUST follow for all social media assets)
+
+**Goal**: Clean, minimalistic, easily recognizable illustrations using the main brand assets.
+
+- **No generic text** — use gaming-native language and terminology that fits the orbs universe
+- **Brand colors + neon accents** — use the existing logo palette as a base (#00ff88 green, dark backgrounds) and layer neon accents to make posts pop
+- **Energy and motion** — incorporate subtle glows, light trails, and particle effects to convey energy and movement
+- **Modular templates** — design dynamic, recognizable layouts and templates for banners and posts that are reusable across announcements, gameplay highlights, and interactive content
+- **Visual consistency** — every asset should be instantly identifiable as PlayOrbs; consistent style drives engagement, shares, and follows
+- **Minimalism first** — keep illustrations clean and uncluttered; let the brand assets (orbs, logo, colors) do the heavy lifting
+- **Feed presence** — assets must stand out in crowded feeds to increase impressions and grow an engaged community
