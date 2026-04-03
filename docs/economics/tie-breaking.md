@@ -54,21 +54,24 @@ Roster index is assigned at join time (first to join = index 0). Using roster in
 
 When multiple eliminations occur in the final frame:
 1. Check alive count
-2. If 1 alive: that player wins
-3. If 0 alive: apply tie-break rules
-4. Determine winner and award survival pool + remaining bounty
+2. If 1 alive: that player wins 1st place
+3. If 0 alive: apply tie-break rules to determine placement order
+4. Top 3 receive survival pot splits, 1st place also receives remaining bounty
 
-## Winner Reward
+## Placement Rewards
 
-The tie-break winner receives the full survival pool plus any undistributed bounty.
+Tie-break rules determine placement for all players, not just the winner. The top 3 finishers share the survival pot:
+
+| Placement | Survival Share (4+ players) | Survival Share (2-3 players) |
+|-----------|----------------------------|------------------------------|
+| **1st** | 65% + remaining bounty | 70% + remaining bounty |
+| **2nd** | 25% | 30% |
+| **3rd** | 10% | — |
 
 ## Edge Cases
 
 ### All Players Same Frame and Stats
 Extremely rare but resolves with lowest roster index.
-
-### EE + Elimination Same Frame
-Kill resolves before EE, so EE cannot "save" a death. Eliminated players are excluded from tie-break.
 
 ### Self-Elimination Tie
 Still applies tie-break rules with no kill credit for self-elimination.

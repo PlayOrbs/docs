@@ -53,7 +53,7 @@ If a player eliminates themselves, no kill credit is given and the bounty for th
 When multiple kills happen in the same frame, they are processed in order determined by the game engine.
 
 ### Bounty Depletion
-If all bounty is distributed, later kills pay nothing, though EE can still trigger if the target was already met.
+If all bounty is distributed, later kills pay nothing. Any remaining bounty at finalization goes to 1st place.
 
 ## Scaling with Player Count
 
@@ -68,6 +68,5 @@ Larger rounds have steeper reward curves.
 
 ## Next Steps
 
-- [Bounty Inheritance](/economics/bounty-inheritance) - Kill chaining
 - [Reward Distribution](/economics/payout-mechanics) - Pool structure
-- [Take Profit](/gameplay/take-profit) - Securing kill earnings
+- [Tie Breaking](/economics/tie-breaking) - Placement rules

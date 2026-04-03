@@ -1,27 +1,27 @@
 ---
 sidebar_position: 1
 title: Fee Distribution
-description: How entry fees are split between players and protocol
+description: How entry fees are split between players and protocol (85/15)
 ---
 
 # Fee Distribution
 
-Entry fees follow a transparent 80/20 split between the prize pool and protocol fees.
+Entry fees follow a transparent 85/15 split between the prize pool and protocol fees.
 
 ## Primary Split
 
-Entry fees are split 80/20 between the player prize pool (vault) and protocol fees.
+Entry fees are split 85/15 between the player prize pool (vault) and protocol fees.
 
 ## Fee Flow
 
 | Destination | Percentage | Purpose |
 |-------------|------------|---------|
-| **Prize Vault** | 80% | Distributed to winners |
-| **Protocol Fees** | 20% | Operations & liquidity |
+| **Prize Vault** | 85% | Distributed to players |
+| **Protocol Fees** | 15% | Operations & liquidity |
 
 ### Protocol Fee Breakdown
 
-The 20% protocol fee is further divided:
+The 15% protocol fee is further divided:
 
 | Component | Share | Purpose |
 |-----------|-------|---------|
@@ -32,10 +32,10 @@ The 20% protocol fee is further divided:
 ## Calculation Example
 
 For a 1 SOL entry:
-- **Prize Pool**: 0.800 SOL (80%)
-- **LP Vault**: 0.020 SOL (2%)
-- **Dev Wallet**: 0.018 SOL (1.8%)
-- **Referrer**: 0.002 SOL (0.2%, if applicable)
+- **Prize Pool**: 0.850 SOL (85%)
+- **LP Vault**: 0.015 SOL (1.5%)
+- **Dev Wallet**: 0.0135 SOL (1.35%)
+- **Referrer**: 0.0015 SOL (0.15%, if applicable)
 
 ## Early Exit Fees
 

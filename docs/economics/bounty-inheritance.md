@@ -1,59 +1,36 @@
 ---
 sidebar_position: 4
-title: Bounty Inheritance
-description: Kill chaining and bounty transfer mechanics
+title: Bounty Inheritance (Legacy)
+description: Kill chaining and bounty transfer — removed in current rewards system
 ---
 
-# Bounty Inheritance
+# Bounty Inheritance (Legacy)
 
-Bounty inheritance transfers a victim's uncashed earnings to their killer, enabling kill chains and strategic depth.
+:::caution Removed Feature
+Bounty inheritance was part of the v1 rewards system. In the current rewards system, **a victim's bounty stays with the victim** — it is not transferred to the killer. This page is kept for historical reference.
+:::
 
-## Core Concept
+## How It Worked (v1)
 
-When Player A kills Player B, B's uncashed bounty transfers to A. This increases A's total bounty and may immediately trigger their EE target.
+In the previous rewards system, when Player A killed Player B, B's uncashed bounty transferred to A. This created kill chains where eliminating high-earners was valuable.
 
-## How It Works
+## Why It Was Removed
 
-The inheritance amount equals the victim's earned bounty minus any they've already cashed out. This amount is transferred to the killer.
+The new rewards system replaced inheritance with a simpler, more transparent model:
 
-## Example Scenario
+- **Clarity**: Each player's earnings are solely from their own kills
+- **Fairer placement rewards**: The survival pot (60% of player pool) is now split among the top 3 finishers, rewarding consistent play
+- **No snowballing**: Removing inheritance prevents one player from accumulating disproportionate bounty through a single lucky kill on a high-earner
 
-If Player A (0.5 SOL earned) kills Player B (0.8 SOL earned from 3 kills), Player A receives:
-- Kill bounty from the schedule (e.g., 0.4 SOL)
-- B's uncashed bounty (0.8 SOL)
-- Total: 1.7 SOL earned
+## Current Model
 
-## Kill Chain Effect
-
-Inheritance creates kill chains where eliminating high-earners is valuable. A player who eliminates someone with accumulated bounty gains all of it, making late-game kills on successful players very rewarding.
-
-## Frame Processing Order
-
-Each frame processes events in order: elimination detection, kill bounty payment, inheritance transfer, EE target checks, and finalization. The order is critical: inheritance happens before EE checks.
-
-## Inheritance + Early Exit
-
-Inheritance can instantly trigger EE. If a player with a 1.0 SOL EE target and 0.6 SOL current earnings kills someone with 0.5 SOL uncashed, the kill bounty plus inheritance may push them over the target, triggering immediate exit.
-
-## Invariants
-
-1. **No minting**: Transfers only move existing credits
-2. **Sum preservation**: Total bounty earned never exceeds pool
-3. **Idempotent**: Each kill processes exactly once
-4. **Deterministic**: Same game state produces same inheritance
-
-## Strategic Implications
-
-### Target Selection
-- **High-earner targets**: Large inheritance potential but often skilled and dangerous
-- **Fresh targets**: Easier kills but low inheritance value
-
-### EE Timing
-- **Early EE**: Secure earnings with no risk of losing to inheritance, but miss survival pool
-- **Late EE**: Higher potential from inheritance chains but risk losing everything
+In the current system:
+- Kill bounty is earned per elimination via the [log-weighted schedule](/economics/kill-rewards)
+- Bounty stays with the player who earned it regardless of whether they're eliminated
+- Top 3 finishers share the [survival pot](/economics/payout-mechanics) (65/25/10)
+- 1st place receives any remaining undistributed bounty
 
 ## Next Steps
 
-- [Kill Rewards](/economics/kill-rewards) - Base bounty schedule
-- [Tie Breaking](/economics/tie-breaking) - Finalization rules
-- [Early Exit](/gameplay/take-profit) - EE mechanics
+- [Kill Rewards](/economics/kill-rewards) - Current bounty schedule
+- [Reward Distribution](/economics/payout-mechanics) - Current pool structure

@@ -6,25 +6,25 @@ description: How prize pools are distributed to players
 
 # Reward Distribution
 
-The prize pool (80% of entries) splits into bounty and survival pools with distinct distribution rules.
+The prize pool (85% of entries) splits into bounty and survival pools with distinct distribution rules.
 
 ## Pool Structure
 
-The prize pool (80% of entries) splits into bounty (70%) and survival (30%) pools.
+The prize pool (85% of entries) splits into bounty (40%) and survival (60%) pools.
 
 ## Pool Allocations
 
 | Pool | Share | Distribution |
 |------|-------|--------------|
-| **Bounty** | 70% | Distributed per kill |
-| **Survival** | 30% | Winner takes all |
+| **Bounty** | 40% | Distributed per kill |
+| **Survival** | 60% | Split among top 3 finishers |
 
 ## Example Pool Calculation
 
 For 10 players at 1 SOL each:
-- **Player Pool**: 8.00 SOL (80%)
-- **Bounty Pool**: 5.60 SOL (70% of player pool)
-- **Survival Pool**: 2.40 SOL (30% of player pool)
+- **Player Pool**: 8.50 SOL (85%)
+- **Bounty Pool**: 3.40 SOL (40% of player pool)
+- **Survival Pool**: 5.10 SOL (60% of player pool)
 
 ## Bounty Distribution
 
@@ -32,25 +32,41 @@ Bounty is distributed per kill using a log-weighted schedule. Early kills (when 
 
 ## Survival Distribution
 
-The survival pool goes to the last player standing. If all players are eliminated simultaneously, tie-break rules apply.
+The survival pool is split among the top finishers based on placement. The split depends on lobby size:
 
-## Final Winner Reward
+### Lobbies with 4+ Players
 
-The winner receives the survival pool plus any remaining bounty (from self-eliminations or rounding).
+| Placement | Share |
+|-----------|-------|
+| **1st** | 65% |
+| **2nd** | 25% |
+| **3rd** | 10% |
+
+### Lobbies with 2-3 Players
+
+| Placement | Share |
+|-----------|-------|
+| **1st** | 70% |
+| **2nd** | 30% |
+
+Placement is determined by survival time, then kills, then roster index. See [Tie Breaking](/economics/tie-breaking) for the full ranking rules.
+
+## Final Winner Bonus
+
+The 1st place finisher also receives any remaining undistributed bounty (from self-eliminations, disconnects, or rounding).
 
 ## Edge Cases
 
-### All Players EE Out
-If all players Early Exit before a winner is determined, the survival pool goes unawarded and players keep their EE amounts.
-
 ### Simultaneous Final Elimination
-Tie-break rules determine the winner who receives the survival pool.
+Tie-break rules determine placement order. Top 3 still receive their survival splits.
+
+### Disconnects
+Disconnected players are ranked by how long they survived. They still receive survival rewards if they place in the top 3.
 
 ### Single Player Remaining
-The last player cannot EE and automatically wins, receiving survival pool plus remaining bounty.
+The last player wins 1st place and receives 65% (or 70%) of the survival pool plus remaining bounty. 2nd and 3rd place still receive their survival splits based on when they were eliminated.
 
 ## Next Steps
 
 - [Kill Rewards](/economics/kill-rewards) - Detailed bounty schedule
-- [Bounty Inheritance](/economics/bounty-inheritance) - Kill chaining
-- [Tie Breaking](/economics/tie-breaking) - Finalization rules
+- [Tie Breaking](/economics/tie-breaking) - Placement and finalization rules
